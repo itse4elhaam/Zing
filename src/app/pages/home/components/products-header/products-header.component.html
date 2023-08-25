@@ -1,0 +1,42 @@
+<mat-card class="mb-4">
+  <div class="flex justify-between">
+    <div>
+      <button mat-button [matMenuTriggerFor]="sortByMenu">
+        sort-by-{{ sort }}
+        <mat-icon fontIcon="expand_more"></mat-icon>
+      </button>
+      <mat-menu #sortByMenu="matMenu">
+        <button mat-menu-item (click)="onSortChange('desc')">
+          desc <mat-icon fontIcon="arrow_upward"></mat-icon>
+        </button>
+        <button mat-menu-item (click)="onSortChange('asc')">
+          asc <mat-icon fontIcon="arrow_downward"></mat-icon>
+        </button>
+      </mat-menu>
+    </div>
+
+    <div class="flex items-center">
+      <div>
+        <button mat-button [matMenuTriggerFor]="menu">
+          Show {{ itemsShowCount }} <mat-icon fontIcon="expand_more"></mat-icon>
+        </button>
+
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="onItemsChange(12)">12</button>
+          <button mat-menu-item (click)="onItemsChange(24)">24</button>
+          <button mat-menu-item (click)="onItemsChange(36)">36</button>
+          <button mat-menu-item (click)="onItemsChange(48)">48</button>
+        </mat-menu>
+      </div>
+      <button (click)="onColsChange(1)">
+        <mat-icon fontIcon="view_list"></mat-icon>
+      </button>
+      <button (click)="onColsChange(3)">
+        <mat-icon fontIcon="view_module"></mat-icon>
+      </button>
+      <button (click)="onColsChange(4)">
+        <mat-icon fontIcon="view_comfy"></mat-icon>
+      </button>
+    </div>
+  </div>
+</mat-card>

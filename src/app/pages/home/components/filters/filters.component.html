@@ -1,0 +1,29 @@
+<mat-expansion-panel *ngIf="categories">
+  <mat-expansion-panel-header>
+    <mat-panel-title>Categories</mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <mat-selection-list [multiple]="false">
+    <ul *ngFor="let category of categories">
+      <li class="flex items-center mr-4 mb-4 space-x-2 px-4">
+        <input
+          id="{{ 'category-' + category }}"
+          type="radio"
+          name="categoryRadio"
+          class="hidden"
+          [value]="category"
+          (change)="onCategoryChange(category)"
+        />
+        <label
+          [for]="'category-' + category"
+          class="flex items-center cursor-pointer text-xl"
+        >
+          <span
+            class="w-4 h-4 inline-block mr-2 rounded-full border border-grey flex-no-shrink"
+          ></span>
+          {{ category }}
+        </label>
+      </li>
+    </ul>
+  </mat-selection-list>
+</mat-expansion-panel>
