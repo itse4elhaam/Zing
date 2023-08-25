@@ -11,7 +11,9 @@ export class FiltersComponent {
   categories: string[] = ['shoes', 'sports', 'bags', 'pens', 'bats'];
 
   onCategoryChange(category: string): void {
-    console.log(category);
     this.showCategory.emit(category);
   }
+
 }
+
+
