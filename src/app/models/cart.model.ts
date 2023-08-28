@@ -4,5 +4,8 @@ export interface CartItem{
     quantity: number;
     price: number;
     id: number;
+}
 
+export interface Cart{
+    items: CartItem[]
 }

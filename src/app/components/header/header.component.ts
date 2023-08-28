@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Cart } from 'src/app/models/cart.model';
 
 @Component({
   selector: 'app-header',
@@ -8,4 +9,18 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
 
 
+  private _cart: Cart = {items: []};
+  itemsQty: number = 0;
+
+
+  @Input() 
+  get cart(): Cart{
+    return this._cart
+  }
+
+  set cart(cart: Cart){
+    this._cart = cart
+
+    this.itemsQty
+  }
 }
