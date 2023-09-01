@@ -9,16 +9,19 @@ type Sort = 'desc' | 'asc';
 })
 export class ProductsHeaderComponent {
   @Output() colsCountChange = new EventEmitter<number>();
+  @Output() itemsCountChange = new EventEmitter<number>();
+  @Output() sortChange = new EventEmitter<string>();
   sort: Sort = 'desc';
   itemsShowCount: number = 12;
 
   onSortChange(newSort: Sort): void {
-    console.log(newSort);
     this.sort = newSort;
+    this.sortChange.emit(newSort);
   }
 
   onItemsChange(count: number): void {
     this.itemsShowCount = count;
+    this.itemsCountChange.emit(count);
   }
 
   onColsChange(colsNum: number): void {

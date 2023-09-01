@@ -9,14 +9,7 @@ import { Product } from 'src/app/models/product.model';
 export class ProductBoxComponent {
   @Input() fullWidthMode = false;
 
-  product: Product = {
-    id: 1,
-    title: 'Laptop',
-    price: 150,
-    category: 'Electronics',
-    description: 'Powerful laptop for all your computing needs.',
-    image: 'https://via.placeholder.com/150',
-  };
+  @Input() product!: Product
 
   @Output() addToCart = new EventEmitter();
 
