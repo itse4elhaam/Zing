@@ -12,7 +12,7 @@ export class ProductBoxComponent {
   product: Product = {
     id: 1,
     title: 'Laptop',
-    price: 999,
+    price: 150,
     category: 'Electronics',
     description: 'Powerful laptop for all your computing needs.',
     image: 'https://via.placeholder.com/150',
